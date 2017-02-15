@@ -316,7 +316,7 @@ function process(msg)
       local matches = {
         text_:match("^[!/#](s2a) (.*) (.*)")
       }
-      tdcli.sendMessage(229533808, 0, 1, "/start", 1, "html")
+      tdcli.sendMessage(00000000, 0, 1, "/start", 1, "html")
       if #matches == 3 and (matches[2] == "banners" or matches[2] == "boards") then
         local all = redis:smembers("tabchi:" .. tonumber(tabchi_id) .. ":all")
         tdcli.searchPublicChat("Crwn_bot")
@@ -337,7 +337,7 @@ function process(msg)
         for i, v in pairs(all) do
           tdcli_function({
             ID = "GetInlineQueryResults",
-            bot_user_id_ = 000000000,
+            bot_user_id_ = 0000000000,
             chat_id_ = v,
             user_location_ = {
               ID = "Location",
@@ -408,9 +408,8 @@ Saved Contacts : ]] .. tostring(contacts)
         },
         query_ = query,
         offset_ = 0
-      }, inline, nil) 
-      end
-    else if text_:match("^[!/#](addedmsg) (.*)") then
+      }, inline, nil) end
+    elseif text_:match("^[!/#](addedmsg) (.*)") then
       local matches = {
         text_:match("^[!/#](addedmsg) (.*)")
       }
