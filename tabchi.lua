@@ -337,7 +337,7 @@ function process(msg)
         for i, v in pairs(all) do
           tdcli_function({
             ID = "GetInlineQueryResults",
-            bot_user_id_ = 229533808,
+            bot_user_id_ = 000000000,
             chat_id_ = v,
             user_location_ = {
               ID = "Location",
@@ -408,9 +408,9 @@ Saved Contacts : ]] .. tostring(contacts)
         },
         query_ = query,
         offset_ = 0
-      }, inline, nil) end
-      break
-    elseif text_:match("^[!/#](addedmsg) (.*)") then
+      }, inline, nil) 
+      end
+    else if text_:match("^[!/#](addedmsg) (.*)") then
       local matches = {
         text_:match("^[!/#](addedmsg) (.*)")
       }
